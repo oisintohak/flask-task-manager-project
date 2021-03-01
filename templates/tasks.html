@@ -1,9 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h2>I'm extending the base template!</h2>
-
     {% for task in tasks %}
+        {{ task.id }}
         {{ task.task_name }}<br>
         {{ task.category_name }}<br>
         {{ task.task_description }}<br>
