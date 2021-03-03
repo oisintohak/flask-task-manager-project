@@ -83,12 +83,19 @@ def profile(username):
         {"username": session["user"]})["username"]
     return render_template("profile.html", username=username)
 
+
 @app.route("/logout")
 def logout():
-    #remove user from session cookies
+    # remove user from session cookies
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
+
+
+@app.route("/add_task")
+def add_task():
+    return render_template("add_task.html")
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
